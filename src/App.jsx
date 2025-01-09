@@ -49,7 +49,7 @@ function App() {
   return (
     <div className="todo-card">
     <h1>Todo List</h1>
-    <InputForm onSubmit={AddTodo} />
+    <InputForm labelText="Add Item" buttonText="Add" onSubmit={AddTodo} />
     
     <h2>Todo Items:
       <button onClick={removeSelectedTasks} id="deleteButton">Delete Selected</button>

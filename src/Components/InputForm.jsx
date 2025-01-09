@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 // eslint-disable-next-line react/prop-types
-export function InputForm({onSubmit}) {
+export function InputForm({onSubmit, labelText, buttonText}) {
   const [task, setTask] = useState('');
 
   function handleSubmit(evt) {
@@ -13,9 +13,9 @@ export function InputForm({onSubmit}) {
 
   return (
     <form onSubmit={handleSubmit} className="input-form">
-      <label>Add Item to List</label>
+      <label>{labelText || "Label"}</label>
       <input type='text' onChange={e => setTask(e.target.value)} value={task}></input>
-      <button>Add</button>
+      <button>{buttonText || "Button"}</button>
     </form>
   )
 }
