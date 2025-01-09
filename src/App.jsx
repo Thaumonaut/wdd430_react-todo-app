@@ -3,7 +3,7 @@ import { InputForm } from "./Components/InputForm";
 import { TodoItem } from "./Components/TodoItem";
 import "./styles/App.css"
 
-// TODO: Delete all currently selected
+// TODO: Add undo feature to reverse a mistaken change
 // TODO: Add points for each task and add points when each task is completed
 
 function App() {
@@ -40,12 +40,19 @@ function App() {
     })
   }
 
+  function removeSelectedTasks() {
+    setTodos(taskList => {
+      return taskList.filter(todo => !todo.completed)
+    })
+  }
+
   return (
     <div className="todo-card">
     <h1>Todo List</h1>
     <InputForm onSubmit={AddTodo} />
     
     <h2>Todo Items:</h2>
+    <button onClick={removeSelectedTasks}>Delete Selected</button>
     <ul>
       {todos.length === 0 && "No Tasks"}
       {todos.map(todo => (
