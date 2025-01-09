@@ -60,7 +60,7 @@ button:hover {
 .input-form {
   display: grid; 
   grid-template-columns: 1fr 1.3fr 0.7fr; 
-  grid-template-rows: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr 1fr; 
   gap: 10px 25px;
   align-items: end;
   grid-template-areas: 
@@ -93,9 +93,14 @@ input[type="text"]:focus, input[type="text"]:active {
   grid-area: button;
 }
 
-input[type="checkbox"] {
-  padding: 1rem;
-  
+#deleteButton {
+  float: right;
+  padding: .5rem;
+  background: red;
+}
+
+#deleteButton:hover {
+  background: #333;
 }
 
 li {
@@ -107,8 +112,8 @@ li {
 }
 
 li button {
+  max-height: 55px;
   width: 55px;
-  height: 40px;
   margin-left: 1rem;
   background: none;
   border:none;

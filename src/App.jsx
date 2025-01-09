@@ -51,8 +51,9 @@ function App() {
     <h1>Todo List</h1>
     <InputForm onSubmit={AddTodo} />
     
-    <h2>Todo Items:</h2>
-    <button onClick={removeSelectedTasks}>Delete Selected</button>
+    <h2>Todo Items:
+      <button onClick={removeSelectedTasks} id="deleteButton">Delete Selected</button>
+    </h2>
     <ul>
       {todos.length === 0 && "No Tasks"}
       {todos.map(todo => (
